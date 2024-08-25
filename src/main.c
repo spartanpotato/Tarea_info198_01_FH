@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "utils.h"
+#include "ui.h"
 
 int main(int argc, char **argv) {
     int option;
@@ -39,23 +40,17 @@ int main(int argc, char **argv) {
                 break;
         }
     }
-    printf("%s\n", username);
-    printf("%s\n", password);
-    printf("%s\n", sentence);
-    printf("%s\n", char_vector);
-    printf("%s\n", char_num);
 
-    printf("%s\n", "antes");
 
     int size = 0;
     int *arr = StringToArray(char_vector, &size);
 
-    printf("%s\n", "despues");
+    int num = atoi(char_num);
 
-    for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }   
-    printf("\n");
+
+    interface(sentence, arr, num);
+
+
 
     // Handle any remaining non-option arguments
     for (int index = optind; index < argc; index++) {
