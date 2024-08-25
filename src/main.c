@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
     int num = atoi(char_num);
 
 
-    interface(sentence, arr, num);
+    interfaz(sentence, arr, num);
 
 
 
