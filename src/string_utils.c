@@ -1,6 +1,7 @@
 #include "string_utils.h"
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
 
 //Compara si los extremos del string son iguales, si lo son itera mas cerca del medio, hasta que se probo todo
 //o se encontro una diferencia
@@ -42,4 +43,32 @@ int TienePalindromos(char *str){
     }
 
     return 0;
+}
+
+//Recorre tood el texto y devuelve la cantidad de vocales
+int CuentaVocales(char *str){
+    const char vocales[] = "aeiouAEIOU"; 
+    int count = 0;
+    while(*str){
+        for (int i = 0; i < 10; i++){
+            if(*str == vocales[i]){
+                count++;
+                break;
+            }
+        }
+        str++;
+    }
+    return count;
+}
+
+//Recorre todo el texto y devuelve la cantidad de letras
+int CuentaLetras(char *str){
+    int count = 0;
+    while(*str){
+        if(isalpha(*str)){
+            count++;
+        }
+        str++;
+    }
+    return count;
 }

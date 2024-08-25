@@ -7,7 +7,7 @@
 
 int main(int argc, char **argv) {
     int option;
-    char *username, *password, *sentence, *char_vector, *char_num;
+    char *username, *password, *sentence, *vector_char, *num_char;
 
     // itera las opciones con getopt y guarda los argumentos de cada una en un string
     while ((option = getopt(argc, argv, "u:p:t:v:n:")) != -1) {
@@ -25,12 +25,12 @@ int main(int argc, char **argv) {
                 strcpy(sentence,optarg);
                 break;
             case 'v':
-                char_vector = malloc(strlen(optarg) + 1);
-                strcpy(char_vector,optarg);
+                vector_char = malloc(strlen(optarg) + 1);
+                strcpy(vector_char,optarg);
                 break;
             case 'n':
-                char_num = malloc(strlen(optarg) + 1);
-                strcpy(char_num,optarg);
+                num_char = malloc(strlen(optarg) + 1);
+                strcpy(num_char,optarg);
                 break;
             case '?':
                 // Handle unknown option or missing argument
@@ -41,14 +41,7 @@ int main(int argc, char **argv) {
         }
     }
 
-
-    int size = 0;
-    int *arr = StringToArray(char_vector, &size);
-
-    int num = atoi(char_num);
-
-
-    interfaz(sentence, arr, num);
+    interfaz(sentence, vector_char, num_char);
 
 
 
