@@ -7,7 +7,8 @@
 
 int main(int argc, char **argv) {
     int option;
-    char *username, *password, *sentence, *vector_char, *num_char;
+    char *username = NULL, *password = NULL, *sentence = NULL, *vector_char = NULL, *num_char = NULL;
+
 
     // itera las opciones con getopt y guarda los argumentos de cada una en un string
     while ((option = getopt(argc, argv, "u:p:t:v:n:")) != -1) {

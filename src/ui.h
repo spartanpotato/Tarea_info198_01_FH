@@ -2,23 +2,23 @@
 //Mantiene una interfaz en la consola
 void interfaz(char *sentence, char *vector_char, char *num_char);
 
-//Actualiza la interfaz mostrando una respuesta
-void actualiza(char *respuesta, int *choice);
+//Actualiza la interfaz dependiendo de las opciones que haya ingresado el usuario y una respuesta
+void actualiza(char *respuesta, int *choice, int *array_opciones);
 
-//Actializa la interfaz sin respuesta
-void actualiza_default();
+//Actualiza la interfaz dependiendo de las opciones que haya ingresado el usuario
+void actualiza_default(int *array_opciones);
 
-//Caso de la interfaz si se escoje opcion 1
-void opcion1(char *sentence, int *choice);
+//Devuelve respuesta a la interfaz si se escoje opcion 1
+char* opcion1(char *sentence);
 
-//caso de la interfaz si se escoje opcion 2
-void opcion2(char *sentence, int *choice);
+//Devuelve respuesta a la interfaz si se escoje opcion 2
+char* opcion2(char *sentence);
 
-//caso de la interfaz si se escoje opcion 3
-void opcion3(char *sentence, int *choice);
+//Devuelve respuesta a la interfaz si se escoje opcion 3
+char* opcion3(char *sentence);
 
-//caso de la interfaz si se escoje opcion 4
-void opcion4(char* vector_char, int* choice);
+//Devuelve respuesta a la interfaz si se escoje opcion 4
+char* opcion4(char* vector_char);
 
-//caso de la interfaz si se escoje opcion 5
-void opcion5(char* num_char, int* choice);
+//Devuelve respuesta a la interfaz si se escoje opcion 5
+char* opcion5(char* num_char);
