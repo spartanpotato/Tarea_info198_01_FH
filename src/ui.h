@@ -2,6 +2,12 @@
 //Mantiene una interfaz en la consola
 void interfaz(char *sentence, char *vector_char, char *num_char);
 
+//Actualiza la interfaz mostrando una respuesta
+void actualiza(char *respuesta, int *choice);
+
+//Actializa la interfaz sin respuesta
+void actualiza_default();
+
 //Caso de la interfaz si se escoje opcion 1
 void opcion1(char *sentence, int *choice);
 
