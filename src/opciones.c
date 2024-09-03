@@ -52,13 +52,21 @@ char* opcion3(char *sentence){
 char* opcion4(char *vector_char){
     int length = 0;
     int *array = StringToArray(vector_char, &length);
+
     int sumatoria = Sumatoria(array, length);
     char sumatoria_str[30];
     sprintf(sumatoria_str, "%d", sumatoria);
+    
+    int promedio = Promedio(array, length);
+    char promedio_str[30];
+    sprintf(promedio_str, "%d", promedio);
 
     char *mensaje = malloc(100);
     strcpy(mensaje, "La sumatoria de los elementos del array es de ");
     strcat(mensaje, sumatoria_str);
+    //strcat(mensaje, "\n");
+    strcat(mensaje, " y el promedio es de ");
+    strcat(mensaje, promedio_str);
     strcat(mensaje, "\n");
 
     return mensaje;

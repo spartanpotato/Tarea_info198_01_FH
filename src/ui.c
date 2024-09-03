@@ -161,7 +161,7 @@ void actualiza(char *respuesta, int* choice, int *array_opciones){
     printf("\n");
     printf("presionaste: %d\n", *choice);
     printf("respuesta: %s",respuesta);
-    printf("presiona 0 para volver\n");
+    printf("ingresa cualquier tecla para volver\n");
     printf("-------------------------------------------------------\n");
 
     

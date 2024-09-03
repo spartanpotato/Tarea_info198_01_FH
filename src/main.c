@@ -17,22 +17,37 @@ int main(int argc, char **argv) {
                 username = malloc(strlen(optarg) + 1);
                 strcpy(username,optarg);
                 break;
+
             case 'p':
                 password = malloc(strlen(optarg) + 1);
                 strcpy(password,optarg);
                 break;
+
             case 't':
                 sentence = malloc(strlen(optarg) + 1);
                 strcpy(sentence,optarg);
                 break;
+
             case 'v':
                 vector_char = malloc(strlen(optarg) + 1);
                 strcpy(vector_char,optarg);
+                if (vector_char != NULL){
+                    if(Cumple_Formato_Vector(vector_char) == 0){
+                        fprintf(stderr, "Vector invalido para opcion -v, debe ser de la forma i1,i2,..,in donde i es un entero\n");
+                        return 1;
+                    }
+                }
                 break;
+
             case 'n':
                 num_char = malloc(strlen(optarg) + 1);
                 strcpy(num_char,optarg);
+                if(strcmp(num_char, "0") == 0){
+                    fprintf(stderr, "No se le puede entregar '0' a la opcion -n\n");
+                    return 1;
+                }
                 break;
+
             case '?':
                 // Handle unknown option or missing argument
                 fprintf(stderr, "Unknown option: -%c\n", optopt);
