@@ -1,5 +1,5 @@
-#include "ui.h"
-#include "opciones.h"
+#include "../include/ui.h"
+#include "../include/opciones.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

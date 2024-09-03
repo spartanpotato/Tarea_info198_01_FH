@@ -1,5 +1,5 @@
-#include "utils.h"
-#include "math_utils.h"
+#include "../include/utils.h"
+#include "../include/math_utils.h"
 
 
 //Devuelve sumatoria de elementos del array

@@ -1,7 +1,7 @@
-#include "opciones.h"
-#include "string_utils.h"
-#include "utils.h"
-#include "math_utils.h"
+#include "../include/opciones.h"
+#include "../include/string_utils.h"
+#include "../include/utils.h"
+#include "../include/math_utils.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>

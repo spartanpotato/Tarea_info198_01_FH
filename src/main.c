@@ -2,8 +2,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include "utils.h"
-#include "ui.h"
+#include "../include/utils.h"
+#include "../include/ui.h"
 
 int main(int argc, char **argv) {
     int option;
