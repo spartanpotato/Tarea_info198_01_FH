@@ -28,4 +28,6 @@
         * "-t" : Este argumento es opcional y es una oracion sobre la cual se pueden realizar las opciones 1, 2 y 3 del programa, debe estar dentro de ""
         * "-v" : Este argumento es opcional y es un vector sobre el cual se puede realizar la opcion 4 del programa, debe tener la forma I1,I2,..,IN donde I es un entero
         * "-n" : Este argumento es opcional y es un numero entero o flotante distinto a 0 sobre el cual se puede realizar la opcion 5 del programa
-    * En caso de no incluir uno de los argumentos opcionales las opciones asociadas a este no estaran presente en la interfaz 
+    * En caso de no incluir uno de los argumentos opcionales las opciones asociadas a este no estaran presente en la interfaz
+    * Los usuarios estan definidos en data/users.txt y pueden ser modificados mientras se respete el formato de user:password
+      el programa no se ejecutara si se proporcionan un usuario y/o contraseña incorrectos

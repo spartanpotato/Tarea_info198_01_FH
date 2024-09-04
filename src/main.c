@@ -4,6 +4,7 @@
 #include <string.h>
 #include "../include/utils.h"
 #include "../include/ui.h"
+#include "../include/user_utils.h"
 
 int main(int argc, char **argv) {
     int option;
@@ -55,6 +56,11 @@ int main(int argc, char **argv) {
             default:
                 break;
         }
+    }
+
+    if(VerificarUsuario(username, password) == 0){
+        fprintf(stderr, "Usuario y/o contraseña incorrectos");
+        return 1;
     }
 
     interfaz(sentence, vector_char, num_char);

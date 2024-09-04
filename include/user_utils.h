@@ -1,0 +1,1 @@
+int VerificarUsuario(char *user, char *password);
