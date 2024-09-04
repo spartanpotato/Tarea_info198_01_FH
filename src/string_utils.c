@@ -2,17 +2,22 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
 //Compara si los extremos del string son iguales, si lo son itera mas cerca del medio, hasta que se probo todo
 //o se encontro una diferencia
 int EsPalindromo(char *str){
+    char *strNoWhitespace = StringSinEspacios(str);
+    char *newStr = toLowerCase(strNoWhitespace);
+    free(strNoWhitespace);
+
     int low = 0;
-    int high = strlen(str) - 1;
+    int high = strlen(newStr) - 1;
 
     bool esPalindromo = 1;
 
     while (esPalindromo && low < high){
-        if (str[low] == str[high]){
+        if (newStr[low] == newStr[high]){
             low++;
             high--;
         }
@@ -21,12 +26,13 @@ int EsPalindromo(char *str){
         }
     }
 
+    free(newStr);
     return esPalindromo;
 }
 
 //Usa strtok para dividir el str en tokens delimitados por " " y aplica EsPalindromo sobre estos tokens
 //termina al encontrar un palindromo o haber probado todos los token
-int TienePalindromos(char *str){
+/*int TienePalindromos(char *str){
     if(str == NULL){
         return 0;
     }
@@ -44,6 +50,7 @@ int TienePalindromos(char *str){
 
     return 0;
 }
+*/
 
 //Recorre tood el texto y devuelve la cantidad de vocales
 int CuentaVocales(char *str){
@@ -72,3 +79,33 @@ int CuentaLetras(char *str){
     }
     return count;
 }
+
+//Devuelve copia del string sin espacios en blanco
+char* StringSinEspacios(char *str){
+    char *str2 = strdup(str);
+    int i = 0, j = 0;
+    while (str2[i]) {
+        if (str2[i] != ' ') {
+            str2[j] = str2[i];
+            j++;
+        }
+        i++;
+    }
+    str2[j] = '\0';
+    return str2;
+}
+
+//Devuelve copia del string con todos los caracteres en minusculas
+char* toLowerCase(char* str) {
+    int i = 0;
+    char* str2 = malloc(strlen(str) + 1);
+
+    while (str[i]) {
+        str2[i] = tolower(str2[i]);
+        i++;
+    }
+    str2[i] = '\0';  // Añade el carácter nulo al final
+
+    return str2;
+}
+

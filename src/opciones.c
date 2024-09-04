@@ -10,11 +10,11 @@
 char* opcion1(char *sentence){
     char *mensaje = malloc(44);
 
-    if(TienePalindromos(sentence) == 1){
-        strcpy(mensaje, "La oracion tiene al menos un palindromo\n");
+    if(EsPalindromo(sentence) == 1){
+        strcpy(mensaje, "La oracion es un palindromo\n");
     }
     else{
-        strcpy(mensaje, "La oracion no tiene ni un palindromo\n");
+        strcpy(mensaje, "La oracion no es un palindromo\n");
     }
 
     return mensaje;
@@ -76,7 +76,7 @@ char* opcion4(char *vector_char){
 
 //Devuelve respuesta a la interfaz si se escoje opcion 5
 char* opcion5(char *num_char){
-    int num = atoi(num_char);
+    float num = strtof(num_char, NULL);
 
     float resultado = Func1(num);
     char *resultado_str = malloc(30);
