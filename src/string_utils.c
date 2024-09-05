@@ -6,8 +6,8 @@
 
 //Compara si los extremos del string son iguales, si lo son itera mas cerca del medio, hasta que se probo todo
 //o se encontro una diferencia
-int EsPalindromo(char *str){
-    char *strNoWhitespace = StringSinEspacios(str);
+int esPalindromo(char *str){
+    char *strNoWhitespace = stringSinEspacios(str);
     char *newStr = toLowerCase(strNoWhitespace);
     free(strNoWhitespace);
 
@@ -30,30 +30,8 @@ int EsPalindromo(char *str){
     return esPalindromo;
 }
 
-//Usa strtok para dividir el str en tokens delimitados por " " y aplica EsPalindromo sobre estos tokens
-//termina al encontrar un palindromo o haber probado todos los token
-/*int TienePalindromos(char *str){
-    if(str == NULL){
-        return 0;
-    }
-
-    char *copy = strdup(str);
-
-    char *token = strtok(copy, " ");
-
-    while(token != NULL){
-        if (EsPalindromo(token) == 1){
-            return 1;
-        }
-        token = strtok(NULL, " ");
-    }
-
-    return 0;
-}
-*/
-
 //Recorre tood el texto y devuelve la cantidad de vocales
-int CuentaVocales(char *str){
+int cuentaVocales(char *str){
     const char vocales[] = "aeiouAEIOU"; 
     int count = 0;
     while(*str){
@@ -69,7 +47,7 @@ int CuentaVocales(char *str){
 }
 
 //Recorre todo el texto y devuelve la cantidad de letras
-int CuentaLetras(char *str){
+int cuentaLetras(char *str){
     int count = 0;
     while(*str){
         if(isalpha(*str)){
@@ -81,7 +59,7 @@ int CuentaLetras(char *str){
 }
 
 //Devuelve copia del string sin espacios en blanco
-char* StringSinEspacios(char *str){
+char* stringSinEspacios(char *str){
     char *str2 = strdup(str);
     int i = 0, j = 0;
     while (str2[i]) {

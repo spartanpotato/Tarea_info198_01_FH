@@ -32,11 +32,9 @@ int main(int argc, char **argv) {
             case 'v':
                 vector_char = malloc(strlen(optarg) + 1);
                 strcpy(vector_char,optarg);
-                if (vector_char != NULL){
-                    if(Cumple_Formato_Vector(vector_char) == 0){
-                        fprintf(stderr, "Vector invalido para opcion -v, debe ser de la forma i1,i2,..,in donde i es un entero\n");
-                        return 1;
-                    }
+                if(cumple_Formato_Vector(vector_char) == 0){
+                    fprintf(stderr, "Vector invalido para opcion -v, debe ser de la forma i1,i2,..,in donde i es un entero\n");
+                    return 1;
                 }
                 break;
 
@@ -50,7 +48,6 @@ int main(int argc, char **argv) {
                 break;
 
             case '?':
-                // Handle unknown option or missing argument
                 fprintf(stderr, "Unknown option: -%c\n", optopt);
                 return 1;
             default:
@@ -58,16 +55,18 @@ int main(int argc, char **argv) {
         }
     }
 
-    if(VerificarUsuario(username, password) == 0){
+    if(verificarUsuario(username, password) == 0){
         fprintf(stderr, "Usuario y/o contraseña incorrectos");
         return 1;
     }
+
+    free(username);
+    free(password);
 
     interfaz(sentence, vector_char, num_char);
 
 
 
-    // Handle any remaining non-option arguments
     for (int index = optind; index < argc; index++) {
         printf("Non-option argument: %s\n", argv[index]);
     }

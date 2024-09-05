@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int VerificarUsuario(char *user, char *password){
+int verificarUsuario(char *user, char *password){
     FILE *file = fopen("../data/users.txt", "r");
     if (file == NULL) {
         perror("No se pudo abrir el archivo");

@@ -10,7 +10,7 @@
 char* opcion1(char *sentence){
     char *mensaje = malloc(44);
 
-    if(EsPalindromo(sentence) == 1){
+    if(esPalindromo(sentence) == 1){
         strcpy(mensaje, "La oracion es un palindromo\n");
     }
     else{
@@ -22,7 +22,7 @@ char* opcion1(char *sentence){
 
 //Devuelve respuesta a la interfaz si se escoje opcion 2
 char* opcion2(char *sentence){
-    int count = CuentaVocales(sentence);
+    int count = cuentaVocales(sentence);
     char count_str[30];
     sprintf(count_str, "%d", count);
 
@@ -36,7 +36,7 @@ char* opcion2(char *sentence){
 
 //Devuelve respuesta a la interfaz si se escoje opcion 3
 char* opcion3(char *sentence){
-    int count = CuentaLetras(sentence);
+    int count = cuentaLetras(sentence);
     char count_str[30];
     sprintf(count_str, "%d", count);
 
@@ -51,15 +51,15 @@ char* opcion3(char *sentence){
 //Devuelve respuesta a la interfaz si se escoje opcion 4
 char* opcion4(char *vector_char){
     int length = 0;
-    int *array = StringToArray(vector_char, &length);
+    int *array = stringToArray(vector_char, &length);
 
-    int sumatoria = Sumatoria(array, length);
+    int valSumatoria = sumatoria(array, length);
     char sumatoria_str[30];
-    sprintf(sumatoria_str, "%d", sumatoria);
+    sprintf(sumatoria_str, "%d", valSumatoria);
     
-    int promedio = Promedio(array, length);
+    int valPromedio = promedio(array, length);
     char promedio_str[30];
-    sprintf(promedio_str, "%d", promedio);
+    sprintf(promedio_str, "%d", valPromedio);
 
     char *mensaje = malloc(100);
     strcpy(mensaje, "La sumatoria de los elementos del array es de ");
@@ -78,7 +78,7 @@ char* opcion4(char *vector_char){
 char* opcion5(char *num_char){
     float num = strtof(num_char, NULL);
 
-    float resultado = Func1(num);
+    float resultado = func1(num);
     char *resultado_str = malloc(30);
     sprintf(resultado_str, "%.2f", resultado);
 

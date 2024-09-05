@@ -5,7 +5,7 @@
 #include <ctype.h>
 
 //transforma un string a un array de enteros
-int* StringToArray(char *str, int *size) {
+int* stringToArray(char *str, int *size) {
     char *copy = strdup(str);
     if (copy == NULL) {
         fprintf(stderr, "Memory allocation failed\n");
@@ -42,7 +42,7 @@ int* StringToArray(char *str, int *size) {
 }
 
 //Toma un string y devuelve si cumple en formato de vector i,i2,i3,..,in
-int Cumple_Formato_Vector(char *str) {
+int cumple_Formato_Vector(char *str) {
     if (str == NULL){
         return 1;
     }
